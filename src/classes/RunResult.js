@@ -42,14 +42,14 @@ class RunResult {
     this._event_number = Number.parseInt(data.EventNumber);
     this._finish_position = Number.parseInt(data.FinishPosition);
     this._user_first_name = data.FirstName;
-    this._was_first_run_at_event = new Boolean(data.FirstTimer);
+    this._was_first_run_at_event = new Boolean(Number(data.FirstTimer));
     this._gender_finish_position = Number.parseInt(data.GenderPosition);
-    this._was_genuine_pb = new Boolean(data.GenuinePB);
+    this._was_genuine_pb = new Boolean(Number(data.GenuinePB));
     this._user_last_name = data.LastName;
     this._run_id = Number.parseInt(data.RunId);
     this._finish_time = data.RunTime;
     this._updated = new Date(data.Updated);
-    this._was_pb = new Boolean(data.WasPbRun);
+    this._was_pb = new Boolean(Number(data.WasPbRun));
     this._series_id = Number.parseInt(data.SeriesID);
 
     this._age_grading_label = getDisplayName(this._age_grading);

@@ -23,7 +23,7 @@ class Event {
 
     // After 08850d5, res.HomeRunSelection has been removed as it is not an accurate response.
 
-    this._isActive = new Boolean(res.StatusLive);
+    this._isActive = new Boolean(Number(res.StatusLive));
     // Skipping res.AnniversarySaturdayOfMonth as we can calculate that from the series ID.
     this._status = res.EventStatus;
     // Skipping res.UserFavourite for now, waiting on issue #4. - note that seems to return null when using Athlete Events?
@@ -32,7 +32,7 @@ class Event {
     this._helperEmail = res.EventHelpersEmail; // undefined handled in getter
     this._totalEvents = Number.parseInt(res.TotalEventsStaged); // NaN handled in getter
 
-    this._public = new Boolean(res.AccessibleToPublic);
+    this._public = new Boolean(JSON.parse(res.AccessibleToPublic));
 
     this._core = core;
   }

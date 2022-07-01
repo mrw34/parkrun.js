@@ -5,7 +5,7 @@ class Country {
   constructor(res, core) {
     this._code = Number.parseInt(res.CountryCode);
     this._name = res.Country;
-    this._active = new Boolean(res.Active);
+    this._active = new Boolean(Number(res.Active));
     this._site_url = res.CountrySiteUrl;
     this._languageID = Number.parseInt(res.DefaultLanguageId);
     this._wiki_name = res.wikiCountryName;
