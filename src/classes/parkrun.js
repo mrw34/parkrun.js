@@ -478,7 +478,7 @@ class Parkrun {
     */
     const firstRequest = await this._makeMultiGetRequest(
       url,
-      Object.assign({ params: { offset: 0, limit: 0 } }, options)
+      { params: Object.assign({ offset: 0, limit: 100 }, options.params) }
     );
 
     // Save the range object to a variable
@@ -506,7 +506,7 @@ class Parkrun {
       parallelRequests.push(
         this._makeMultiGetRequest(
           url,
-          Object.assign({ params: { offset: amountDownloaded } }, options)
+          { params: Object.assign({ offset: amountDownloaded, limit: 100 }, options.params) }
         )
       );
 
